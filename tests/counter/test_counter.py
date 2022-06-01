@@ -9,4 +9,4 @@ def test_counter():
     try:
         count_ocurrences("tests/counter/languages.txt", 5)
     except AttributeError:
-        pytest.mark.xfail(reason="Invalid input type")
+        pytest.mark.xfail()
