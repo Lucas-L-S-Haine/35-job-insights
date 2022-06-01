@@ -1,4 +1,5 @@
 import src.jobs as jobs
+from src.salary_range import validate_salary
 
 
 def get_unique_job_types(path):
@@ -170,8 +171,7 @@ def matches_salary_range(job, salary):
         If `job["min_salary"]` is greather than `job["max_salary"]`
         If `salary` isn't a valid integer
     """
-    if type(salary) != int:
-        raise(ValueError)
+    validate_salary(salary)
     try:
         lower_bound = int(job["min_salary"])
         upper_bound = int(job["max_salary"])
